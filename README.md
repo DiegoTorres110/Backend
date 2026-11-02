@@ -21,7 +21,7 @@ Backend desarrollado en Node.js y Express que utiliza un sistema de autenticaci�
 O en modo normal:
    npm start
 
-#Endpoints de la API:
+# Endpoints de la API:
 | Método | Ruta | Descripción | ¿Requiere token? |
 | :--- | :--- | :--- | :--- |
 | **POST** | `/api/users` | Crear usuario (crearUser) | No |
