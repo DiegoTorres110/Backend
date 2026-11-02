@@ -12,7 +12,7 @@ Backend desarrollado en Node.js y Express que utiliza un sistema de autenticaci√
 1. Clona este repositorio:
    ```bash
    git clone
-   [https://github.com/DiegoTorres110/tu-repositorio.git](https://github.com/DiegoTorres110/tu-repositorio.git)
+   [Enlace github]
 2. Entra a la carpeta del proyecto e instala las dependencias:
    npm install
 3. Crea un archivo .env en la ra√≠z basado en el archivo .env.example y configura tus propias credenciales (Puerto, URI de MongoDB y JWT Secret).
