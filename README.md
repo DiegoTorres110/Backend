@@ -31,3 +31,8 @@ O en modo normal:
 | **POST** | `/api/tareas` | Crear una tarea asignada al usuario logueado (createTareas) | **Sí** |
 | **PUT** | `/api/tareas/:id` | Modificar una tarea propia (updateTareas) | **Sí** |
 | **DELETE** | `/api/tareas/:id` | Eliminar una tarea propia (deleteTareas) | **Sí** |
+
+# Reglas de seguridad y arquitectura
+* **Protección de Rutas:** Todas las rutas del CRUD de tareas pasan por un middleware de autenticación que valida el header `Authorization: Bearer <token>`. Si no se proporciona un token o este es inválido, la API responde con un `401 Unauthorized`.
+* **Extracción Segura de Identidad:** El ID del usuario se obtiene directamente del token decodificado (`req.user.id`), protegiendo la aplicación de manipulaciones en el cuerpo de la petición o en la URL.
+* **Aislamiento de Datos:** Cada tarea almacena la referencia del ID de su propietario, asegurando que las consultas filtren de forma estricta los registros y que ningún usuario pueda ver, modificar o eliminar datos de otros usuarios.
