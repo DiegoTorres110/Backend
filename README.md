@@ -11,15 +11,14 @@ Backend desarrollado en Node.js y Express que utiliza un sistema de autenticaci�
 # Instrucciones de instalación y ejecución:
 1. Clona este repositorio:
    ```bash
-   git clone
-   [Enlace github]
+   git clone [Enlace github]
 2. Entra a la carpeta del proyecto e instala las dependencias:
-   npm install
+   "npm install"
 3. Crea un archivo .env en la raíz basado en el archivo .env.example y configura tus propias credenciales (Puerto, URI de MongoDB y JWT Secret).
 4. Ejecuta el servidor en modo de desarrollo:
-   npm run dev
+   "npm run dev"
 O en modo normal:
-   npm start
+   "npm start"
 
 # Endpoints de la API:
 | Método | Ruta | Descripción | ¿Requiere token? |
