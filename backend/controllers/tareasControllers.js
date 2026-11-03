@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler'); //require es para usar pa
 const Tarea = require('../models/tareasModel')          // o para acceder a x archivo
 
 const getTareas = asyncHandler(async(req,res)=>{ //res-response, para pedir respuesta, es como un return 
-    const tareas = await Tarea.find({user: req.user.id_usuario}) //req-request, para solicitar algo que necesites
+    const tareas = await Tarea.find({user: req.user.id}) //req-request, para solicitar algo que necesites
     res.status(200).json(tareas)
 })
 
@@ -14,7 +14,7 @@ const createTareas = asyncHandler(async(req,res)=>{
 
     const tarea = await Tarea.create({
         descripcion: req.body.descripcion,
-        user: req.user.id_usuario
+        user: req.user.id
     })
 
     res.status(201).json({tarea})
