@@ -6,10 +6,10 @@ const User = require('../models/usersModel')
 
 const register = asyncHandler(async(req, res) => {
     //desestructuramos el body
-    const {name, email, password} = req.body
+    const {nombre, email, password} = req.body
 
     //validamos los datos
-    if(!name ) {
+    if(!nombre ) {
         res.status(400)
         throw new Error ("Favor de teclar el nombre")
     }
@@ -37,15 +37,15 @@ const register = asyncHandler(async(req, res) => {
 
     //crear el usuario 
     const user = await User.create({
-        name,
+        nombre,
         email,
         password: hashedPassword
     })
 
     if(user) {
-        res.status(200).json({
+        res.status(201).json({
             _id: user.id,
-            name: user.name,
+            nombre: user.nombre,
             email: user.email,
             password:user.password
         })
@@ -62,7 +62,7 @@ const login = asyncHandler(async(req, res) => {
     if (user && (await bcrypt.compare(password, user.password))) {
         res.status(200).json({
             _id: user.id,
-            name: user.name,
+            nombre: user.nombre,
             email:user.email,
             token: generarToken(user.id)
         })
